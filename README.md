@@ -418,11 +418,15 @@
 1. 三个页面
 
                >> http://localhost/hebschool/admin.php后台账户：phpcms 密码phpcms
+	       
                >> http://localhost/hebschool/index.php前台登录
+	       
                >> MyAdmin进入数据库账户：root密码：root
 	     
 2. 新建数据库
  
              >>	在phpstudy1文件夹中www文件夹里创建文件夹将phpcms_v9_UTF8文件夹中的install_packege里全部拷进新建文件夹中
-             >> http://localhost/hbschool//install/install.php安装
+	     
+             >> http://localhost/hbschool//install/install.php 安装
+	     
              >>	root密码root，之后即可有三个页面
