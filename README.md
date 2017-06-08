@@ -455,4 +455,50 @@
 	    >> 4.{JS_PATH},{IMG_PATH}方法同上
 	    
 	    >> 5.css中的图片可以改变图片放置位置 
+	    
+	   > 第2步 动态获取数据
+	   
+	     >> PC标签以{pc}开始、以{/pc}结束的一对标签  作用：根据指定要求，获取某些栏目的某些信息，将后台内容显示到前台  {pc:content   action="lists"   cache="3600" num="20"    page="$page"  }     {/pc}
+
+
+	     
+	     >> 1. 内容列表
+	     
+	          >>>文章标题的显示
+		   {pc:content action="lists" catid="21" order="inputtime DESC" num="8"}
+    
+                    >>> {loop $data $v}
+    
+                   >>><li><a href="{$v['url']}">{$v['title']}
+    
+                   >>> </a><span class="newsdate">{$v['inputtime']}</span><>
+    
+                  >>>{/loop}
+    
+                   >>>{/pc}
+    
+                   >>> content是内容模块，它需要找到的模块;
+	
+                    >>> action为它所要进行的行为,lists表示要获取列表;
+	    
+                   >>> catid是要获取的栏目的catid值;
+	    
+                    >>>order表示排序依据及排序方式;
+	    
+                    >>> num表示要获取的数据数目;
+	    
+                   >>> $data代表数据;
+	    
+                    >>> $v存放每一条数据;
+	    
+                   >>> $v['title'],$v['url'],$v['inputtime']为数据库中的数据;
+
+
+	     
+	     >> 2. 栏目信息
+	     
+	     >>3. 推荐位
+	     
+	     >> 4. 其他
+
  
