@@ -466,34 +466,34 @@
 	     
 	     >> 1. 内容列表
 	     
-	          >>>文章标题的显示
+	           >>>文章标题的显示
 		   {pc:content action="lists" catid="21" order="inputtime DESC" num="8"}
     
-                    >>> {loop $data $v}
+                     >>> {loop $data $v}
     
-                   >>><li><a href="{$v['url']}">{$v['title']}
+                    >>><li><a href="{$v['url']}">{$v['title']}
     
-                   >>> </a><span class="newsdate">{$v['inputtime']}</span><>
+                    >>> </a><span class="newsdate">{$v['inputtime']}</span><>
     
-                  >>>{/loop}
+                   >>>{/loop}
     
                    >>>{/pc}
     
-                   >>> content是内容模块，它需要找到的模块;
+                    >>> content是内容模块，它需要找到的模块;
 	
                     >>> action为它所要进行的行为,lists表示要获取列表;
 	    
-                   >>> catid是要获取的栏目的catid值;
+                    >>> catid是要获取的栏目的catid值;
 	    
                     >>>order表示排序依据及排序方式;
 	    
                     >>> num表示要获取的数据数目;
 	    
-                   >>> $data代表数据;
+                    >>> $data代表数据;
 	    
                     >>> $v存放每一条数据;
 	    
-                   >>> $v['title'],$v['url'],$v['inputtime']为数据库中的数据;
+                    >>> $v['title'],$v['url'],$v['inputtime']为数据库中的数据;
 		   
 		   >注意：  内容 栏目管理 修改 模板设置 hbschool（修改模板）
  
