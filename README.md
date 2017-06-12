@@ -500,7 +500,39 @@
 	     
 	     >> 2. 栏目信息
 	     
+	     >>>{pc:content action="category" catid="0" num="11"
+                 >>> siteid="$siteid" order="listorderASC"}
+	      
+                  >>> {loop $data $v}
+	      
+                  >>> {if $v['catid']=="19"}
+	       
+                  >>> <li><a href="{$v['url']}" class="specil">{$v['catname']}</a></li>
+		
+                 >>> {else}
+		
+                 >>> <li><a href="{$v['url']}">{$v['catname']}</a></li>
+	      
+                 >>>  {/if}
+	      
+                 >>>{/loop}
+	       
+                 >>> {/pc}
+		 
+		 >>>siteid:当前站点 （站点群中的当前站点）
+		 
 	     >>3. 推荐位
+	     
+	      {pc:content action="category" catid="$catid" order="listorder ASC"}
+               
+                {loop $data $v}
+                 {if $v['catid']=="25"}
+                <li><a href="{$v['url']}" class="dq">{$v['catname']}</a></li>
+                {else}
+                <a href="{$v['url']}">{$v['catname']}</a>
+                {/if}
+                {/loop}
+                {/pc}
 	     
 	     >> 4. 其他
 
