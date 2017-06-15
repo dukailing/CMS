@@ -521,19 +521,33 @@
 		 
 		 >>>siteid:当前站点 （站点群中的当前站点）
 		 
-	     >>3. 推荐位
-	     
+	     >>3. 推荐位（category的左侧列表）
+	     
 	      {pc:content action="category" catid="$catid" order="listorder ASC"}
                
                 {loop $data $v}
-                 {if $v['catid']=="25"}
+                {if $v['catid']=="25"}
                 <li><a href="{$v['url']}" class="dq">{$v['catname']}</a></li>
                 {else}
                 <a href="{$v['url']}">{$v['catname']}</a>
                 {/if}
                 {/loop}
                 {/pc}
+		
+             >> 注意：catid="$catid" 当前栏目的id 获取当前栏目的子栏目
 	     
+             >> listorder 是通过栏目排序号来进行排序（若栏目混乱则可以通过修改栏目排序号来调整）
+	     
+	     >> 子栏目不用设置num
+	     
+	     >> 所有数据放在$data（必须有）中，每一条数据放在$v中
+	     
+	     >> 获取列表页的内容的pc标签时需要有num因为分页需要确定每页的数量
+	     
+	     >>  除栏目是category其他为lists
+	     
+	     >> phpMyAdmin中category中child代表是否有子栏目，arrchildid代表子栏目的id，可以通过这个类似数组查找到子栏目的id值
+	     
 	     >> 4. 其他
 
  
