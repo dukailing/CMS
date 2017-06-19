@@ -438,7 +438,7 @@
 
                 >> 2.栏目：网页中对所有内容的分类，相当于网页的索引，可以让人快速找到想要寻找的内容。
 
-                >> 3.模型：网页中内容上传时的模式，多种多样可以使内容多样化，展示方式更灵活。
+                >> 3.模型：网页中内容上传时的模式，多种多样可以使内容多样化，展示方式更灵活，对应一张数据表，每个使用这个模型的栏目就放在这个数据表中。
 
                 >> 4.关系：所有的内容一定属于一个栏目，栏目中包含了网页中所有的内容，栏目是内容的分类；内容上传的模式是模型，内容只有通过某种模型才能上传。
 
@@ -559,6 +559,35 @@
                        > {/loop}
                    > {/pc}
 	     
-	     >> 4. 其他
+	     
+	     > 当前 
+	             > 标题{$title}，作者{$username}
+	     
+	           >点击数:
+		   
+		    >> 1.<script type="text/javascript" src="{JS_PATH}/jquery.min.js"></script>引入 jquery文件 
+		   
+	            >> 2.点击数后<span id="hits"></span>
+		    
+		    >>  3.在</html>标签前加<script type="text/javascript" src="{APP_PATH}api.php?op=count&id={$id}&modelid=             {$modelid}"></script> 
+		    
+	            >  更新时间[$updatetime]，内容[$content]
+		   
+	            >  上一篇$privious_page['title']
+	    
+	            >  $privious_page['url']
+	    
+	            >  下一篇$next_page['url']$next_page['title']
+		   添加推荐位：1. 修改文章->在首页头条推荐打钩->右上角添加缩略图
+		             2. 在内容模块中管理推荐位
+			     >> action：推荐位
+                             >> posid:推荐位id（后台推荐位管理中的id）
+			      {pc:content action="position" posid="2"
+                         num="3" order="listorder DESC"}
+                         {loop $data $v}
+                         <p> <img src="{$v['thumb']}" width="200" height="150" />{$v['title']}</p> 
+                         {/loop}
+                         {/pc}
+	     >> 4. 其他
 
  
