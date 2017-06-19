@@ -547,6 +547,17 @@
 	     >>  除栏目是category其他为lists
 	     
 	     >> phpMyAdmin中category中child代表是否有子栏目，arrchildid代表子栏目的id，可以通过这个类似数组查找到子栏目的id值
+	     
+	     >{pc:content action="category" catid="$parentid" order="listorder ASC"}
+                       > {loop $data $v}
+                           > {if $v['catid']==$catid}
+                           > <a href="{$v['url']}" class="dq">{$v['catname']}</a>
+                           > <?php $curname=$v['catname'];?>
+                           > {else}
+                           > <a href="{$v['url']}">{$v['catname']}</a>
+                           > {/if}
+                       > {/loop}
+                   > {/pc}
 	     
 	     >> 4. 其他
 
